@@ -12,16 +12,16 @@ For our experiments, we used 1 NVIDIA 3090 GPUs.
 
 
 ## Pre-trained models and related file downloads
-[pretrained models](https://drive.google.com/file/d/1eD0oENp4_NKpodaTZs2P9c4TXjZ8nbdg/view?usp=sharing)
-[supplementary](https://drive.google.com/file/d/1YV0-caNYlWoc_88nZLTnNXEZh_seM8CN/view?usp=share_link)
+[pretrained models](https://drive.google.com/file/d/1eD0oENp4_NKpodaTZs2P9c4TXjZ8nbdg/view?usp=sharing)  
+[Related file](https://drive.google.com/file/d/1YV0-caNYlWoc_88nZLTnNXEZh_seM8CN/view?usp=share_link)  
 
 
 ## Data preparation
-Please refer to [Data preparation](https://github.com/Pose-Group/DCPose/blob/main/docs/Installation.md)
+Please refer to [Data preparation](https://github.com/Pose-Group/DCPose/blob/main/docs/Installation.md)  
 
 
 ## Acknowledgement
 Thanks for the baselines, we construct the code based on them:
 
-[DCpose](https://github.com/Pose-Group/DCPose)
-[EDVR](https://github.com/xinntao/EDVR)
+[DCpose](https://github.com/Pose-Group/DCPose)  
+[EDVR](https://github.com/xinntao/EDVR)  

@@ -1,0 +1,86 @@
+_BASE_: "../Base_PoseTrack17.yaml"
+EXPERIMENT_NAME: 'FaSRnet_loss_weight_0.4'
+WORKERS: 2
+GPUS: (0,)
+OUTPUT_DIR: './output/FaSRnet/'
+CUDNN:
+  BENCHMARK: true
+  DETERMINISTIC: true
+  ENABLED: true
+CORE_FUNCTION: CommonFunction
+
+SEED: 1234
+
+MODEL:
+  NAME: FaSRnet
+
+
+  USE_ATT: false
+  ATT_TEMP_C: 256
+  USE_PCDA: true
+  USE_F: false
+  USE_F_C: 48
+  USE_F_HM: true
+  USE_DOUBLE_LOSS: true
+
+  USE_PRF: true
+  PRF_BASICBLOCK_NUM: 2
+  PRF_INNER_CH: 34
+
+  USE_PTM: true
+  PTM_BASICBLOCK_NUM: 1
+  PTM_INNER_CH: 17
+
+  USE_PCN: true
+  PRF_PTM_COMBINE_BASICBLOCK_NUM: 2
+  PRF_PTM_COMBINE_INNER_CH: 64
+
+  DEFORMABLE_CONV:
+    DILATION:
+      - 1
+
+    AGGREGATION_TYPE: weighted_sum
+
+LOSS:
+  USE_TARGET_WEIGHT: true
+  L1_WEIGHT:  0.4
+
+TRAIN:
+  AUTO_RESUME: true
+  SAVE_MODEL_PER_EPOCH: 1
+  BATCH_SIZE_PER_GPU: 64
+
+  BEGIN_EPOCH: 0
+  END_EPOCH: 30
+  OPTIMIZER: adam
+  LR: 0.0001
+  MILESTONES:
+    - 9
+    - 17
+    - 21
+    - 25
+
+  GAMMA: 0.1
+VAL:
+  BATCH_SIZE_PER_GPU: 128
+  MODEL_FILE: '/home/xu/data/program/FaSRnet/output/epoch_28_state.pth'
+
+TEST:
+  BATCH_SIZE_PER_GPU: 128
+  MODEL_FILE: '/home/xu/data/program/FaSRnet/output/epoch_28_state.pth'
+
+DEBUG:
+  VIS_SKELETON: false
+  VIS_BBOX: false
+  VIS_TENSORBOARD_2: false
+
+  DEBUG: false
+  SAVE_BATCH_IMAGES_GT: true
+  SAVE_BATCH_IMAGES_PRED: true
+  SAVE_HEATMAPS_GT: true
+  SAVE_HEATMAPS_PRED: true
+  SAVE_P_HEATMAPS_PRED: true
+  SAVE_C_HEATMAPS_PRED: true
+  SAVE_N_HEATMAPS_PRED: true
+  SAVE_PCN_HEATMAPS_PRED: true
+  SAVE_PCN_IMAGES: true

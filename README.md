@@ -17,7 +17,7 @@ For our experiments, we used 1 NVIDIA 3090 GPUs.
 
 
 ## Data preparation
-Please refer to https://github.com/Pose-Group/DCPose/blob/main/docs/Installation.md
+Please refer to [Data preparation](https://github.com/Pose-Group/DCPose/blob/main/docs/Installation.md)
 
 
 ## Acknowledgement
